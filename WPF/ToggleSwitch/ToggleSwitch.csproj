@@ -2,7 +2,9 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     
-    <UseWPF>true</UseWPF>
+    
+    
+    
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyTitle>Toggle Switch Control Library</AssemblyTitle>

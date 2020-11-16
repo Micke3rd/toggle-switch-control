@@ -3,7 +3,9 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     
-    <UseWPF>true</UseWPF>
+    
+    
+    
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyTitle>Toggle Switch Demo</AssemblyTitle>
