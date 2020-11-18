@@ -170,7 +170,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ToggleSwitch\ToggleSwitch.csproj">
-      <Project>{750868B6-9930-4E00-80BB-AE97487ED24A}</Project>
+      <Project Sdk="Microsoft.NET.Sdk">{750868B6-9930-4E00-80BB-AE97487ED24A}</Project>
       <Name>ToggleSwitch</Name>
     </ProjectReference>
   </ItemGroup>
