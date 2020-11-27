@@ -9,10 +9,10 @@ namespace Demo.Utils
 	{
 		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
 		{
-			var radius = Double.Parse(value.ToString(), culture);
+			var radius = double.Parse(value.ToString(), culture);
 			if (parameter != null)
 			{
-				radius *= Double.Parse(parameter.ToString(), culture);
+				radius *= double.Parse(parameter.ToString(), culture);
 			}
 			return new CornerRadius(radius);
 		}

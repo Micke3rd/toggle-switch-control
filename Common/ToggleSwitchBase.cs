@@ -523,7 +523,7 @@ namespace ToggleSwitch
 
 		protected void InvokeUnchecked(RoutedEventArgs e)
 		{
-			RoutedEventHandler handler = Unchecked;
+			var handler = Unchecked;
 			if (handler != null)
 			{
 				handler(this, e);
@@ -537,7 +537,7 @@ namespace ToggleSwitch
 
 		protected void InvokeChecked(RoutedEventArgs e)
 		{
-			RoutedEventHandler handler = Checked;
+			var handler = Checked;
 			if (handler != null)
 			{
 				handler(this, e);
@@ -651,16 +651,16 @@ namespace ToggleSwitch
 #if SILVERLIGHT
             IsChecked = !IsChecked;
 #else
-            SetCurrentValue(IsCheckedProperty, !IsChecked);
+			SetCurrentValue(IsCheckedProperty, !IsChecked);
 #endif
-        }
+		}
 
-        /// <summary>
-        /// Raised when the size of the control has changed.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected virtual void OnSizeChanged(object sender, SizeChangedEventArgs e)
+		/// <summary>
+		/// Raised when the size of the control has changed.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		protected virtual void OnSizeChanged(object sender, SizeChangedEventArgs e)
 		{
 			LayoutControls();
 		}
@@ -783,7 +783,7 @@ namespace ToggleSwitch
 		/// </remarks>
 		private bool OnKeyDownInternal(Key key)
 		{
-			bool handled = false;
+			var handled = false;
 
 			if (IsEnabled)
 			{
@@ -848,7 +848,7 @@ namespace ToggleSwitch
 		/// </remarks>
 		private bool OnKeyUpInternal(Key key)
 		{
-			bool handled = false;
+			var handled = false;
 
 			if (IsEnabled && (key == Key.Space))
 			{
@@ -866,7 +866,7 @@ namespace ToggleSwitch
 				}
 				else if (_isMouseCaptured)
 				{
-					bool isValid = IsValidMousePosition();
+					var isValid = IsValidMousePosition();
 					IsPressed = isValid;
 					if (!isValid)
 					{
@@ -1076,7 +1076,7 @@ namespace ToggleSwitch
 			backgroundAnimation.Duration = duration;
 			thumbAnimation.Duration = duration;
 
-			double offset = IsChecked ? CheckedOffset : UncheckedOffset;
+			var offset = IsChecked ? CheckedOffset : UncheckedOffset;
 			backgroundAnimation.To = offset;
 			thumbAnimation.To = offset;
 

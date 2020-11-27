@@ -302,7 +302,7 @@
             </Borders:OuterGlowBorder>
         </Grid>
     </ControlTemplate>
-    
+
     <ControlTemplate x:Key="HorizontalToggleSwitchTemplate" TargetType="ToggleSwitch:HorizontalToggleSwitch">
         <Grid>
             <VisualStateManager.VisualStateGroups>

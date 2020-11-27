@@ -8,7 +8,6 @@
 // <author>Eric Jensen</author>
 // <summary>Horizontally oriented toggle switch control.</summary>
 //-----------------------------------------------------------------------
-using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -51,7 +50,7 @@ namespace ToggleSwitch
 #else
 			DragOffset += e.HorizontalChange;
 #endif
-			Offset =System.Math.Max(UncheckedOffset,System.Math.Min(CheckedOffset, DragOffset));
+			Offset = System.Math.Max(UncheckedOffset, System.Math.Min(CheckedOffset, DragOffset));
 		}
 
 		protected override void LayoutControls()
@@ -61,11 +60,11 @@ namespace ToggleSwitch
 				return;
 			}
 
-			double fullThumbWidth = SwitchThumb.ActualWidth + SwitchThumb.BorderThickness.Left + SwitchThumb.BorderThickness.Right;
+			var fullThumbWidth = SwitchThumb.ActualWidth + SwitchThumb.BorderThickness.Left + SwitchThumb.BorderThickness.Right;
 
 			if (SwitchChecked != null && SwitchUnchecked != null)
 			{
-				SwitchChecked.Width = SwitchUnchecked.Width =System.Math.Max(0, SwitchRoot.ActualWidth - fullThumbWidth / 2);
+				SwitchChecked.Width = SwitchUnchecked.Width = System.Math.Max(0, SwitchRoot.ActualWidth - fullThumbWidth / 2);
 				SwitchChecked.Padding = new Thickness(0, 0, (SwitchThumb.ActualWidth + SwitchThumb.BorderThickness.Left) / 2, 0);
 				SwitchUnchecked.Padding = new Thickness((SwitchThumb.ActualWidth + SwitchThumb.BorderThickness.Right) / 2, 0, 0, 0);
 			}
@@ -84,13 +83,13 @@ namespace ToggleSwitch
 		protected override void OnDragCompleted(object sender, DragCompletedEventArgs e)
 		{
 			IsDragging = false;
-			bool click = false;
-			double fullThumbWidth = SwitchThumb.ActualWidth + SwitchThumb.BorderThickness.Left + SwitchThumb.BorderThickness.Right;
+			var click = false;
+			var fullThumbWidth = SwitchThumb.ActualWidth + SwitchThumb.BorderThickness.Left + SwitchThumb.BorderThickness.Right;
 
 			if ((!IsChecked && DragOffset > (SwitchRoot.ActualWidth - fullThumbWidth) * (Elasticity - 1.0))
 				 || (IsChecked && DragOffset < (SwitchRoot.ActualWidth - fullThumbWidth) * -Elasticity))
 			{
-				double edge = IsChecked ? CheckedOffset : UncheckedOffset;
+				var edge = IsChecked ? CheckedOffset : UncheckedOffset;
 				if (Offset != edge)
 				{
 					click = true;

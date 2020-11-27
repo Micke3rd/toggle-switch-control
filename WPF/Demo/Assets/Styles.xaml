@@ -130,12 +130,12 @@
                                               TextDecorations="{TemplateBinding TextDecorations}"
                                               TextWrapping="{TemplateBinding TextWrapping}"
                                               IsHitTestVisible="False">
-                                     <TextBlock.Foreground>
-                                          <SolidColorBrush x:Name="PART_DropShadowBrush" />
-                                     </TextBlock.Foreground>
-                                     <TextBlock.RenderTransform>
-                                          <TranslateTransform X="2" Y="2" x:Name="PART_DropShadowTranslate" />
-                                     </TextBlock.RenderTransform>
+                            <TextBlock.Foreground>
+                                <SolidColorBrush x:Name="PART_DropShadowBrush" />
+                            </TextBlock.Foreground>
+                            <TextBlock.RenderTransform>
+                                <TranslateTransform X="2" Y="2" x:Name="PART_DropShadowTranslate" />
+                            </TextBlock.RenderTransform>
                         </TextBlock>
                         <TextBlock Text="{TemplateBinding Text}"
                                       TextDecorations="{TemplateBinding TextDecorations}"
