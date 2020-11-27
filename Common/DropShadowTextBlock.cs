@@ -226,7 +226,7 @@ namespace Demo.Controls
         /// <returns>The offset point.</returns>
         private static Point GetOffset(double angle, double distance)
         {
-            double x = Math.Cos(DegreesToRadians(angle)) * distance;
+            double x = System.Math.Cos(DegreesToRadians(angle)) * distance;
             double y = Math.Tan(DegreesToRadians(angle)) * x;
             return new Point(x, y);
         }

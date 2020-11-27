@@ -51,7 +51,7 @@ namespace ToggleSwitch
 #else
 			DragOffset += e.HorizontalChange;
 #endif
-			Offset = Math.Max(UncheckedOffset, Math.Min(CheckedOffset, DragOffset));
+			Offset =System.Math.Max(UncheckedOffset,System.Math.Min(CheckedOffset, DragOffset));
 		}
 
 		protected override void LayoutControls()
@@ -65,7 +65,7 @@ namespace ToggleSwitch
 
 			if (SwitchChecked != null && SwitchUnchecked != null)
 			{
-				SwitchChecked.Width = SwitchUnchecked.Width = Math.Max(0, SwitchRoot.ActualWidth - fullThumbWidth / 2);
+				SwitchChecked.Width = SwitchUnchecked.Width =System.Math.Max(0, SwitchRoot.ActualWidth - fullThumbWidth / 2);
 				SwitchChecked.Padding = new Thickness(0, 0, (SwitchThumb.ActualWidth + SwitchThumb.BorderThickness.Left) / 2, 0);
 				SwitchUnchecked.Padding = new Thickness((SwitchThumb.ActualWidth + SwitchThumb.BorderThickness.Right) / 2, 0, 0, 0);
 			}

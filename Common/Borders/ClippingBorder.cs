@@ -294,8 +294,8 @@ namespace ToggleSwitch.Borders
 		{
 			if (size.Width > 0 || size.Height > 0)
 			{
-				double contentWidth = Math.Max(0, size.Width - BorderThickness.Left - BorderThickness.Right);
-				double contentHeight = Math.Max(0, size.Height - BorderThickness.Top - BorderThickness.Bottom);
+				double contentWidth =System.Math.Max(0, size.Width - BorderThickness.Left - BorderThickness.Right);
+				double contentHeight =System.Math.Max(0, size.Height - BorderThickness.Top - BorderThickness.Bottom);
 
 				if (_topLeftClip != null)
 				{

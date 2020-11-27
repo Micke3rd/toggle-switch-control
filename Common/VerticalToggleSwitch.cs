@@ -52,7 +52,7 @@ namespace Demo.Controls
 #else
 			DragOffset += e.VerticalChange;
 #endif
-			Offset = Math.Min(UncheckedOffset, Math.Max(CheckedOffset, DragOffset));
+			Offset =System.Math.Min(UncheckedOffset,System.Math.Max(CheckedOffset, DragOffset));
 		}
 
 		protected override void LayoutControls()
@@ -66,7 +66,7 @@ namespace Demo.Controls
 
 			if (SwitchChecked != null && SwitchUnchecked != null)
 			{
-				SwitchChecked.Height = SwitchUnchecked.Height = Math.Max(0, SwitchRoot.ActualHeight - fullThumbHeight / 2);
+				SwitchChecked.Height = SwitchUnchecked.Height =System.Math.Max(0, SwitchRoot.ActualHeight - fullThumbHeight / 2);
 				SwitchChecked.Padding = new Thickness(0, 0, 0, (SwitchThumb.ActualHeight + +SwitchThumb.BorderThickness.Bottom) / 2);
 				SwitchUnchecked.Padding = new Thickness(0, (SwitchThumb.ActualHeight + +SwitchThumb.BorderThickness.Top) / 2, 0, 0);
 			}
