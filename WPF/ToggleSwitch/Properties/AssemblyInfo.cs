@@ -9,7 +9,7 @@ using System.Windows;
 // associated with an assembly.
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly: ThemeInfo(ResourceDictionaryLocation.SourceAssembly, ResourceDictionaryLocation.SourceAssembly)]
+[assembly: ThemeInfo(ResourceDictionaryLocation.SourceAssembly,ResourceDictionaryLocation.SourceAssembly)]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
