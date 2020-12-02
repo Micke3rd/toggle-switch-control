@@ -18,7 +18,7 @@ namespace Demo.Controls
 	///<summary>
 	/// Vertically oriented toggle switch control.
 	///</summary>
-	public class VerticalToggleSwitch : ToggleSwitchBase
+	public class VerticalToggleSwitch: ToggleSwitchBase
 	{
 		public VerticalToggleSwitch()
 		{
@@ -30,12 +30,12 @@ namespace Demo.Controls
 			get { return Canvas.GetTop(SwitchThumb); }
 			set
 			{
-//#if WPF
-				SwitchTrack.BeginAnimation(Canvas.TopProperty, null);
-				SwitchThumb.BeginAnimation(Canvas.TopProperty, null);
-//#endif
-//				Canvas.SetTop(SwitchThumb, value);
-//				Canvas.SetTop(SwitchTrack, value);
+				//#if WPF
+				SwitchTrack.BeginAnimation(Canvas.TopProperty,null);
+				SwitchThumb.BeginAnimation(Canvas.TopProperty,null);
+				//#endif
+				//				Canvas.SetTop(SwitchThumb, value);
+				//				Canvas.SetTop(SwitchTrack, value);
 			}
 		}
 
@@ -44,14 +44,14 @@ namespace Demo.Controls
 			get { return new PropertyPath("(Canvas.Top)"); }
 		}
 
-		protected override void OnDragDelta(object sender, DragDeltaEventArgs e)
+		protected override void OnDragDelta(object sender,DragDeltaEventArgs e)
 		{
 #if SILVERLIGHT
 			DragOffset += e.VerticalChange * ZoomFactor;
 #else
 			DragOffset += e.VerticalChange;
 #endif
-			Offset = System.Math.Min(UncheckedOffset, System.Math.Max(CheckedOffset, DragOffset));
+			Offset = System.Math.Min(UncheckedOffset,System.Math.Max(CheckedOffset,DragOffset));
 		}
 
 		protected override void LayoutControls()
@@ -65,9 +65,9 @@ namespace Demo.Controls
 
 			if (SwitchChecked != null && SwitchUnchecked != null)
 			{
-				SwitchChecked.Height = SwitchUnchecked.Height = System.Math.Max(0, SwitchRoot.ActualHeight - fullThumbHeight / 2);
-				SwitchChecked.Padding = new Thickness(0, 0, 0, (SwitchThumb.ActualHeight + +SwitchThumb.BorderThickness.Bottom) / 2);
-				SwitchUnchecked.Padding = new Thickness(0, (SwitchThumb.ActualHeight + +SwitchThumb.BorderThickness.Top) / 2, 0, 0);
+				SwitchChecked.Height = SwitchUnchecked.Height = System.Math.Max(0,SwitchRoot.ActualHeight - fullThumbHeight / 2);
+				SwitchChecked.Padding = new Thickness(0,0,0,(SwitchThumb.ActualHeight + +SwitchThumb.BorderThickness.Bottom) / 2);
+				SwitchUnchecked.Padding = new Thickness(0,(SwitchThumb.ActualHeight + +SwitchThumb.BorderThickness.Top) / 2,0,0);
 			}
 
 			UncheckedOffset = SwitchRoot.ActualHeight - SwitchThumb.ActualHeight - SwitchThumb.Margin.Top - SwitchThumb.Margin.Bottom;
@@ -80,7 +80,7 @@ namespace Demo.Controls
 			}
 		}
 
-		protected override void OnDragCompleted(object sender, DragCompletedEventArgs e)
+		protected override void OnDragCompleted(object sender,DragCompletedEventArgs e)
 		{
 			IsDragging = false;
 			var click = false;
