@@ -26,7 +26,7 @@ namespace Demo
 				if (_restartToggleChecked != value)
 				{
 					_restartToggleChecked = value;
-					InvokePropertyChanged("RestartToggleChecked");
+					InvokePropertyChanged(nameof(RestartToggleChecked));
 
 					if (_restartToggleChecked)
 					{

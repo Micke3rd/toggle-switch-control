@@ -66,8 +66,8 @@ namespace ToggleSwitch.Utils
 		{
 			if (PropertyChanged != null)
 			{
-				PropertyChanged(this,new PropertyChangedEventArgs("ActualWidthValue"));
-				PropertyChanged(this,new PropertyChangedEventArgs("ActualHeightValue"));
+				PropertyChanged(this,new PropertyChangedEventArgs(nameof(ActualWidthValue)));
+				PropertyChanged(this,new PropertyChangedEventArgs(nameof(ActualHeightValue)));
 			}
 		}
 	}
